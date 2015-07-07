@@ -1,0 +1,23 @@
+.btn-circle.btn-lg {
+  width: 40px;
+  height: 40px;
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+
+.feedback{position: fixed;}
+
+.feedback textarea{height: 180px; }
+.feedback .screenshot{ position: relative; top: -24px; right: 10px; opacity: .6}
+.feedback .screenshot:hover{  opacity: 1}
+.feedback .reported p, .feedback .failed p  { height: 190px}
+
+
+.feedback.left{left:5px; bottom:5px}
+.feedback.right{right:5px; bottom:5px}
+
+.feedback .dropdown-menu{width: 320px;height: 320px;bottom: 50px;}
+.feedback.left .dropdown-menu{ left: 0px}
+.feedback.right .dropdown-menu{ right: 0px}
