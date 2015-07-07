@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Default Title</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/css/site.css">
-  </head>
-  <body>
-    <!-- page content -->
+<h1>BootStrap, jQuery, HTML2Canvas Bug Reporter</h1>
+As seen on <a href="https://asked.io/jquery-bootstrap-html2canvas-bug-feedback-reporter">asked.io</a> and <a href="http://bootsnipp.com/snippets/KrEz3">bootsnipp.com</a>
 
-    <div class="feedback right">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <div class="feedback left">
       <div class="tooltips">
           <div class="btn-group dropup">
             <button type="button" class="btn btn-primary dropdown-toggle btn-circle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -22,8 +14,8 @@
                   <h2 class="text-center">Report Bug</h2>
                   <form class="doo" method="post" action="report.php">
                     <div class="col-sm-12">
-                      <textarea name="comment" class="form-control" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
-                      <input required name="screenshot" type="hidden" class="screen-uri">
+                      <textarea required name="comment" class="form-control" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
+                      <input name="screenshot" type="hidden" class="screen-uri">
                       <span class="screenshot pull-right"><i class="fa fa-camera cam" title="Take Screenshot"></i></span>
                      </div>
                      <div class="col-sm-12 clearfix">
@@ -55,9 +47,3 @@
       </div>
     </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="resources/js/site.js"></script>
-  </body>
-</html>

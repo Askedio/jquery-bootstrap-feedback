@@ -1,10 +1,10 @@
 (function ( $ ) {
     $.fn.feedback = function(success, fail) {
-		self=$(this);
-		$(this).find('.dropdown-menu-form').on('click', function(e){e.stopPropagation()})
+    	self=$(this);
+		self.find('.dropdown-menu-form').on('click', function(e){e.stopPropagation()})
 
-		$(this).find('.screenshot').on('click', function(){
-			$(this).find('i').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
+		self.find('.screenshot').on('click', function(){
+			self.find('.cam').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
 			html2canvas($(document.body), {
 				onrendered: function(canvas) {
 					self.find('.screen-uri').val(canvas.toDataURL("image/png"));
@@ -13,7 +13,7 @@
 			});
 		});
 
-		$(this).find('.do-close').on('click', function(){
+		self.find('.do-close').on('click', function(){
 			self.find('.dropdown-toggle').dropdown('toggle');
 			self.find('.reported, .failed').hide();
 			self.find('.report').show();
@@ -28,7 +28,7 @@
 			if(fail) fail();
 		}
 
-		$(this).find('form').on('submit', function(){
+		self.find('form').on('submit', function(){
 			self.find('.report').hide();
 			self.find('.loading').show();
 			$.post( $(this).attr('action'), $(this).serialize(), null, 'json').done(function(res){
