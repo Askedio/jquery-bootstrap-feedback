@@ -18,6 +18,6 @@
 .feedback.left{left:5px; bottom:5px}
 .feedback.right{right:5px; bottom:5px}
 
-.feedback .dropdown-menu{width: 320px;height: 320px;bottom: 50px;}
+.feedback .dropdown-menu{width: 290px;height: 320px;bottom: 50px;}
 .feedback.left .dropdown-menu{ left: 0px}
 .feedback.right .dropdown-menu{ right: 0px}
