@@ -23,7 +23,7 @@
                   <form class="doo" method="post" action="report.php">
                     <div class="col-sm-12">
                       <textarea name="comment" class="form-control" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
-                      <input name="screenshot" type="hidden" class="screen-uri">
+                      <input required name="screenshot" type="hidden" class="screen-uri">
                       <span class="screenshot pull-right"><i class="fa fa-camera cam" title="Take Screenshot"></i></span>
                      </div>
                      <div class="col-sm-12 clearfix">
@@ -31,18 +31,18 @@
                      </div>
                  </form>
                 </div>
-                <div class="loading text-center collapse">
+                <div class="loading text-center hideme">
                   <h2>Please wait...</h2>
                   <h2><i class="fa fa-refresh fa-spin"></i></h2>
                 </div>
-                <div class="reported text-center collapse">
+                <div class="reported text-center hideme">
                   <h2>Thank you!</h2>
                   <p>Your submission has been received, we will review it shortly.</p>
                    <div class="col-sm-12 clearfix">
                       <button class="btn btn-success btn-block do-close">Close</button>
                    </div>
                 </div>
-                <div class="failed text-center collapse">
+                <div class="failed text-center hideme">
                   <h2>Oh no!</h2>
                   <p>It looks like your submission was not sent.<br><br><a href="mailto:">Try contacting us by the old method.</a></p>
                    <div class="col-sm-12 clearfix">

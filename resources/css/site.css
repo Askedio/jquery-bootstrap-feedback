@@ -21,3 +21,4 @@
 .feedback .dropdown-menu{width: 290px;height: 320px;bottom: 50px;}
 .feedback.left .dropdown-menu{ left: 0px}
 .feedback.right .dropdown-menu{ right: 0px}
+.feedback .hideme{ display: none}
