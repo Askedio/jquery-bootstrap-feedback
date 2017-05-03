@@ -19,4 +19,4 @@
 .feedback .dropdown-menu {width: 290px;height: 320px;bottom: 50px;}
 .fixed-bottom-left .dropdown-menu{ left: 0 }
 .fixed-bottom-right .dropdown-menu{ right: 0 }
-.feedback-hideme { display: none}
+.feedback-loading, .feedback-reported, .feedback-failed { display: none }
