@@ -65,37 +65,43 @@
   <div class="modal fade feedback" id="feedbackModal" tabindex="-1" role="dialog" data-html2canvas-ignore="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
-              <div class="modal-body">
-                  <div class="feedback-report">
-                      <h2 class="text-center">Report Bug</h2>
+              <div class="feedback-report text-center">
+                  <div class="modal-header">
+                      <h2 class="modal-title">Report Bug</h2>
+                  </div>
+                  <div class="modal-body">
                       <form class="doo" method="post" action="report.php">
-                          <div class="form-group">
-                              <textarea required name="comment" class="form-control feedback-textarea" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
-                              <input name="screenshot" type="hidden" class="feedback-screen-uri">
-                              <span class="feedback-screenshot pull-right"><i class="fa fa-camera feedback-cam" title="Take Screenshot"></i></span>
-                          </div>
-                          <div class="form-group">
-                              <button class="btn btn-primary btn-block">Submit Report</button>
-                          </div>
+                          <textarea required name="comment" class="form-control feedback-textarea" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
+                          <input name="screenshot" type="hidden" class="feedback-screen-uri">
+                          <span class="feedback-screenshot pull-right"><i class="fa fa-camera feedback-cam" title="Take Screenshot"></i></span>
+                          <button class="btn btn-primary btn-block">Submit Report</button>
                       </form>
                   </div>
-                  <div class="feedback-loading text-center">
-                      <h2>Please wait...</h2>
+              </div>
+              <div class="feedback-loading text-center">
+                  <div class="modal-header">
+                      <h2 class="modal-title">Please wait...</h2>
+                  </div>
+                  <div class="modal-body">
                       <h2><i class="fa fa-refresh fa-spin"></i></h2>
                   </div>
-                  <div class="feedback-reported text-center">
-                      <h2>Thank you!</h2>
-                      <p>Your submission has been received, we will review it shortly.</p>
-                      <div class="form-group">
-                          <button class="btn btn-success btn-block feedback-close" data-dismiss="modal">Close</button>
-                      </div>
+              </div>
+              <div class="feedback-reported text-center">
+                  <div class="modal-header">
+                      <h2 class="modal-title">Thank you!</h2>
                   </div>
-                  <div class="feedback-failed text-center">
-                      <h2>Oh no!</h2>
+                  <div class="modal-body">
+                      <p>Your submission has been received, we will review it shortly.</p>
+                      <button class="btn btn-success btn-block feedback-close" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              <div class="feedback-failed text-center">
+                  <div class="modal-header">
+                      <h2 class="modal-title">Oh no!</h2>
+                  </div>
+                  <div class="modal-body">
                       <p>It looks like your submission was not sent.<br><br><a href="mailto:">Try contacting us by the old method.</a></p>
-                      <div class="form-group">
-                          <button class="btn btn-danger btn-block feedback-close" data-dismiss="modal">Close</button>
-                      </div>
+                      <button class="btn btn-danger btn-block feedback-close" data-dismiss="modal">Close</button>
                   </div>
               </div>
           </div><!-- /.modal-content -->
