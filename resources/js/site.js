@@ -46,7 +46,8 @@
             function reset() {
                 self.find('.feedback-reported, .feedback-failed').hide();
                 self.find('.feedback-report').show();
-                self.find('.feedback-cam fa').removeClass('fa-check').addClass('fa-camera');
+                self.find('.feedback-cam .fa').removeClass('fa-check').addClass('fa-camera');
+                self.find('.feedback-screen-uri').val('');
                 form[0].reset();
             }
 
