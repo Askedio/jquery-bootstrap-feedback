@@ -1,0 +1,27 @@
+{
+  "name": "jquery-bootstrap-feedback",
+  "homepage": "https://github.com/Askedio/jquery-bootstrap-feedback",
+  "authors": [
+    "https://github.com/Askedio/"
+  ],
+  "description": "Simple popup for users to submit site feedback. In the initial release we're using it for bug reporting but after that we'll be using it for site feedback.",
+  "main": "",
+  "keywords": [
+    "jQuery",
+    "Bootstrap",
+    "Feedback"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "html2canvas": "^0.4.1",
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}
