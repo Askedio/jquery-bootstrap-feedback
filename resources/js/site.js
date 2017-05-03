@@ -2,22 +2,41 @@
     $.fn.feedback = function(success, fail) {
     	$(this).each(function() {
             var self = $(this),
-                form = self.find('form');
+                form = self.find('form'),
+				screenshot = self.find('.feedback-screenshot');
 
             self.find('.dropdown-menu-form').on('click', function(e){e.stopPropagation()});
 
-            self.find('.feedback-screenshot').on('click', function(){
-                self.find('.feedback-cam').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
+            if (screenshot.is(":checkbox")) {
+                screenshot.on('change', function() {
+                	if (screenshot.is(":checked")) {
+                		render()
+					}
+					else {
+                        self.find('.feedback-screen-uri').val('');
+					}
+				});
+			}
+			else {
+                screenshot.on('click', function(){
+                    screenshot.find('.fa').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
+                    render(function() {
+                        screenshot.find('.fa').removeClass('fa-refresh fa-spin').addClass('fa-check');
+					});
+                });
+			}
+			
+			function render(callback) {
                 if (self.is(".modal")) {
                     $(".modal-backdrop").attr("data-html2canvas-ignore", "true");
                 }
                 html2canvas($(document.body), {
                     onrendered: function(canvas) {
-                        self.find('.screen-uri').val(canvas.toDataURL("image/png"));
-                        self.find('.feedback-cam').removeClass('fa-refresh fa-spin').addClass('fa-check');
+                        self.find('.feedback-screen-uri').val(canvas.toDataURL("image/png"));
+                        if (callback) callback();
                     }
                 });
-            });
+			}
 
             self.find('.feedback-close').on('click', function(){
                 self.find('.dropdown-toggle').dropdown('toggle');
@@ -27,7 +46,7 @@
             function reset() {
                 self.find('.feedback-reported, .feedback-failed').hide();
                 self.find('.feedback-report').show();
-                self.find('.feedback-cam').removeClass('fa-check').addClass('fa-camera');
+                self.find('.feedback-cam fa').removeClass('fa-check').addClass('fa-camera');
                 form[0].reset();
             }
 

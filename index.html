@@ -25,7 +25,7 @@
                   <div class="col-sm-12">
                     <textarea required name="comment" class="form-control feedback-textarea" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
                     <input name="screenshot" type="hidden" class="feedback-screen-uri">
-                    <span class="feedback-screenshot pull-right"><i class="fa fa-camera feedback-cam" title="Take Screenshot"></i></span>
+                    <span class="feedback-cam feedback-screenshot pull-right"><i class="fa fa-camera" title="Take Screenshot"></i></span>
                    </div>
                    <div class="col-sm-12 clearfix">
                     <button class="btn btn-primary btn-block">Submit Report</button>
@@ -65,15 +65,15 @@
   <div class="modal fade feedback" id="feedbackModal" tabindex="-1" role="dialog" data-html2canvas-ignore="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
-              <div class="feedback-report text-center">
-                  <div class="modal-header">
+              <div class="feedback-report">
+                  <div class="modal-header text-center">
                       <h2 class="modal-title">Report Bug</h2>
                   </div>
                   <div class="modal-body">
                       <form class="doo" method="post" action="report.php">
                           <textarea required name="comment" class="form-control feedback-textarea" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
                           <input name="screenshot" type="hidden" class="feedback-screen-uri">
-                          <span class="feedback-screenshot pull-right"><i class="fa fa-camera feedback-cam" title="Take Screenshot"></i></span>
+                          <div class="checkbox"><label><input type="checkbox" class="feedback-screenshot"> Attach a screenshot</label></div>
                           <button class="btn btn-primary btn-block">Submit Report</button>
                       </form>
                   </div>
