@@ -11,13 +11,13 @@
     As seen on <a href="https://asked.io/jquery-bootstrap-html2canvas-bug-feedback-reporter">asked.io</a> and <a href="http://bootsnipp.com/snippets/KrEz3">bootsnipp.com</a>
   </div>
 
-  <div class="feedback left">
+  <div class="feedback fixed-bottom-left">
     <div class="tooltips">
         <div class="btn-group dropup">
           <button type="button" class="btn btn-primary dropdown-toggle btn-circle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-bug fa-2x" title="Report Bug"></i>
           </button>
-          <ul class="dropdown-menu dropdown-menu-right dropdown-menu-form">
+          <ul class="dropdown-menu dropdown-menu-right dropdown-menu-form" data-html2canvas-ignore="true">
             <li>
               <div class="report">
                 <h2 class="text-center">Report Bug</h2>
@@ -55,6 +55,52 @@
         </div>
     </div>
   </div>
+
+  <div class="fixed-bottom-right">
+      <button type="button" class="btn btn-primary btn-circle btn-lg" data-toggle="modal" data-target="#feedbackModal">
+          <i class="fa fa-bug fa-2x" title="Report Bug"></i>
+      </button>
+  </div>
+
+  <div class="modal fade feedback" id="feedbackModal" tabindex="-1" role="dialog" data-html2canvas-ignore="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="report">
+                      <h2 class="text-center">Report Bug</h2>
+                      <form class="doo" method="post" action="report.php">
+                          <div class="form-group">
+                              <textarea required name="comment" class="form-control" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
+                              <input name="screenshot" type="hidden" class="screen-uri">
+                              <span class="screenshot pull-right"><i class="fa fa-camera cam" title="Take Screenshot"></i></span>
+                          </div>
+                          <div class="form-group">
+                              <button class="btn btn-primary btn-block">Submit Report</button>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="loading text-center hideme">
+                      <h2>Please wait...</h2>
+                      <h2><i class="fa fa-refresh fa-spin"></i></h2>
+                  </div>
+                  <div class="reported text-center hideme">
+                      <h2>Thank you!</h2>
+                      <p>Your submission has been received, we will review it shortly.</p>
+                      <div class="form-group">
+                          <button class="btn btn-success btn-block do-close" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+                  <div class="failed text-center hideme">
+                      <h2>Oh no!</h2>
+                      <p>It looks like your submission was not sent.<br><br><a href="mailto:">Try contacting us by the old method.</a></p>
+                      <div class="form-group">
+                          <button class="btn btn-danger btn-block do-close" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>

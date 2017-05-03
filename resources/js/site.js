@@ -1,10 +1,13 @@
 (function ( $ ) {
     $.fn.feedback = function(success, fail) {
-    	self=$(this);
-		self.find('.dropdown-menu-form').on('click', function(e){e.stopPropagation()})
+    	var self = $(this);
+		self.find('.dropdown-menu-form').on('click', function(e){e.stopPropagation()});
 
 		self.find('.screenshot').on('click', function(){
 			self.find('.cam').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
+			if (self.is(".modal")) {
+				$(".modal-backdrop").attr("data-html2canvas-ignore", "true");
+			}
 			html2canvas($(document.body), {
 				onrendered: function(canvas) {
 					self.find('.screen-uri').val(canvas.toDataURL("image/png"));
@@ -14,15 +17,19 @@
 		});
 
 		self.find('.do-close').on('click', function(){
-			self.find('.dropdown-toggle').dropdown('toggle');
-			self.find('.reported, .failed').hide();
-			self.find('.report').show();
-			self.find('.cam').removeClass('fa-check').addClass('fa-camera');
-		    self.find('.screen-uri').val('');
-		    self.find('textarea').val('');
+            self.find('.dropdown-toggle').dropdown('toggle');
+			reset();
 		});
+		
+		function reset() {
+            self.find('.reported, .failed').hide();
+            self.find('.report').show();
+            self.find('.cam').removeClass('fa-check').addClass('fa-camera');
+            self.find('.screen-uri').val('');
+            self.find('textarea').val('');
+		}
 
-		failed = function(){
+		function failed(){
 			self.find('.loading').hide();
 			self.find('.failed').show();
 			if(fail) fail();
@@ -32,7 +39,7 @@
 			self.find('.report').hide();
 			self.find('.loading').show();
 			$.post( $(this).attr('action'), $(this).serialize(), null, 'json').done(function(res){
-				if(res.result == 'success'){
+				if(res.result === 'success'){
 					self.find('.loading').hide();
 					self.find('.reported').show();
 					if(success) success();
