@@ -8,15 +8,15 @@
 }
 
 .fixed-bottom-left, .fixed-bottom-right {position: fixed;}
-.fixed-bottom-left{left:5px; bottom:5px}
-.fixed-bottom-right{right:5px; bottom:5px}
+.fixed-bottom-left {left:5px; bottom:5px}
+.fixed-bottom-right {right:5px; bottom:5px}
 
-.feedback textarea{height: 180px; }
-.feedback .screenshot{ position: relative; top: -24px; right: 10px; opacity: .6}
-.feedback .screenshot:hover{  opacity: 1}
-.feedback .reported p, .feedback .failed p  { height: 190px}
+.feedback-textarea { height: 180px !important; }
+.feedback-screenshot{ position: relative; top: -24px; right: 10px; opacity: .6}
+.feedback-screenshot:hover{  opacity: 1}
+.feedback-reported p, .feedback-failed p  { height: 190px}
 
-.feedback .dropdown-menu{width: 290px;height: 320px;bottom: 50px;}
+.feedback .dropdown-menu {width: 290px;height: 320px;bottom: 50px;}
 .fixed-bottom-left .dropdown-menu{ left: 0 }
 .fixed-bottom-right .dropdown-menu{ right: 0 }
-.feedback .hideme{ display: none}
+.feedback-hideme { display: none}

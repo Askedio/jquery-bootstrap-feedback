@@ -19,35 +19,35 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-right dropdown-menu-form" data-html2canvas-ignore="true">
             <li>
-              <div class="report">
+              <div class="feedback-report">
                 <h2 class="text-center">Report Bug</h2>
                 <form class="doo" method="post" action="report.php">
                   <div class="col-sm-12">
-                    <textarea required name="comment" class="form-control" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
-                    <input name="screenshot" type="hidden" class="screen-uri">
-                    <span class="screenshot pull-right"><i class="fa fa-camera cam" title="Take Screenshot"></i></span>
+                    <textarea required name="comment" class="form-control feedback-textarea" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
+                    <input name="screenshot" type="hidden" class="feedback-screen-uri">
+                    <span class="feedback-screenshot pull-right"><i class="fa fa-camera feedback-cam" title="Take Screenshot"></i></span>
                    </div>
                    <div class="col-sm-12 clearfix">
                     <button class="btn btn-primary btn-block">Submit Report</button>
                    </div>
                </form>
               </div>
-              <div class="loading text-center hideme">
+              <div class="feedback-loading text-center feedback-hideme">
                 <h2>Please wait...</h2>
                 <h2><i class="fa fa-refresh fa-spin"></i></h2>
               </div>
-              <div class="reported text-center hideme">
+              <div class="feedback-reported text-center feedback-hideme">
                 <h2>Thank you!</h2>
                 <p>Your submission has been received, we will review it shortly.</p>
                  <div class="col-sm-12 clearfix">
-                    <button class="btn btn-success btn-block do-close">Close</button>
+                    <button class="btn btn-success btn-block feedback-close">Close</button>
                  </div>
               </div>
-              <div class="failed text-center hideme">
+              <div class="feedback-failed text-center feedback-hideme">
                 <h2>Oh no!</h2>
                 <p>It looks like your submission was not sent.<br><br><a href="mailto:">Try contacting us by the old method.</a></p>
                  <div class="col-sm-12 clearfix">
-                    <button class="btn btn-danger btn-block do-close">Close</button>
+                    <button class="btn btn-danger btn-block feedback-close">Close</button>
                  </div>
               </div>
             </li>
@@ -66,35 +66,35 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-body">
-                  <div class="report">
+                  <div class="feedback-report">
                       <h2 class="text-center">Report Bug</h2>
                       <form class="doo" method="post" action="report.php">
                           <div class="form-group">
-                              <textarea required name="comment" class="form-control" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
-                              <input name="screenshot" type="hidden" class="screen-uri">
-                              <span class="screenshot pull-right"><i class="fa fa-camera cam" title="Take Screenshot"></i></span>
+                              <textarea required name="comment" class="form-control feedback-textarea" placeholder="Please tell us what bug or issue you've found, provide as much detail as possible."></textarea>
+                              <input name="screenshot" type="hidden" class="feedback-screen-uri">
+                              <span class="feedback-screenshot pull-right"><i class="fa fa-camera feedback-cam" title="Take Screenshot"></i></span>
                           </div>
                           <div class="form-group">
                               <button class="btn btn-primary btn-block">Submit Report</button>
                           </div>
                       </form>
                   </div>
-                  <div class="loading text-center hideme">
+                  <div class="feedback-loading text-center feedback-hideme">
                       <h2>Please wait...</h2>
                       <h2><i class="fa fa-refresh fa-spin"></i></h2>
                   </div>
-                  <div class="reported text-center hideme">
+                  <div class="feedback-reported text-center feedback-hideme">
                       <h2>Thank you!</h2>
                       <p>Your submission has been received, we will review it shortly.</p>
                       <div class="form-group">
-                          <button class="btn btn-success btn-block do-close" data-dismiss="modal">Close</button>
+                          <button class="btn btn-success btn-block feedback-close" data-dismiss="modal">Close</button>
                       </div>
                   </div>
-                  <div class="failed text-center hideme">
+                  <div class="feedback-failed text-center feedback-hideme">
                       <h2>Oh no!</h2>
                       <p>It looks like your submission was not sent.<br><br><a href="mailto:">Try contacting us by the old method.</a></p>
                       <div class="form-group">
-                          <button class="btn btn-danger btn-block do-close" data-dismiss="modal">Close</button>
+                          <button class="btn btn-danger btn-block feedback-close" data-dismiss="modal">Close</button>
                       </div>
                   </div>
               </div>

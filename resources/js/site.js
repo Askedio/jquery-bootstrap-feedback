@@ -3,45 +3,45 @@
     	var self = $(this);
 		self.find('.dropdown-menu-form').on('click', function(e){e.stopPropagation()});
 
-		self.find('.screenshot').on('click', function(){
-			self.find('.cam').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
+		self.find('.feedback-screenshot').on('click', function(){
+			self.find('.feedback-cam').removeClass('fa-camera fa-check').addClass('fa-refresh fa-spin');
 			if (self.is(".modal")) {
 				$(".modal-backdrop").attr("data-html2canvas-ignore", "true");
 			}
 			html2canvas($(document.body), {
 				onrendered: function(canvas) {
 					self.find('.screen-uri').val(canvas.toDataURL("image/png"));
-					self.find('.cam').removeClass('fa-refresh fa-spin').addClass('fa-check');
+					self.find('.feedback-cam').removeClass('fa-refresh fa-spin').addClass('fa-check');
 				}
 			});
 		});
 
-		self.find('.do-close').on('click', function(){
+		self.find('.feedback-close').on('click', function(){
             self.find('.dropdown-toggle').dropdown('toggle');
 			reset();
 		});
 		
 		function reset() {
-            self.find('.reported, .failed').hide();
-            self.find('.report').show();
-            self.find('.cam').removeClass('fa-check').addClass('fa-camera');
-            self.find('.screen-uri').val('');
+            self.find('.feedback-reported, .feedback-failed').hide();
+            self.find('.feedback-report').show();
+            self.find('.feedback-cam').removeClass('fa-check').addClass('fa-camera');
+            self.find('.feedback-screen-uri').val('');
             self.find('textarea').val('');
 		}
 
 		function failed(){
-			self.find('.loading').hide();
-			self.find('.failed').show();
+			self.find('.feedback-loading').hide();
+			self.find('.feedback-failed').show();
 			if(fail) fail();
 		}
 
 		self.find('form').on('submit', function(){
-			self.find('.report').hide();
-			self.find('.loading').show();
+			self.find('.feedback-report').hide();
+			self.find('.feedback-loading').show();
 			$.post( $(this).attr('action'), $(this).serialize(), null, 'json').done(function(res){
 				if(res.result === 'success'){
-					self.find('.loading').hide();
-					self.find('.reported').show();
+					self.find('.feedback-loading').hide();
+					self.find('.feedback-reported').show();
 					if(success) success();
 				} else failed();
 			}).fail(function(){
